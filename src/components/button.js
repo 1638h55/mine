@@ -1,11 +1,6 @@
 
 import {Button} from 'antd-mobile';
-
-const buttonstyle = {
-'color':'#1a90e9',
-'fontSize':'0.32rem',
-'border':'none',
-}
+import {smallbutton} from './variable';
 export function myButton(callback,{style,loaded,disabled,children}){
   style = style || buttonstyle;
   return (

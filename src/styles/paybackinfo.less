@@ -1,15 +1,33 @@
-:global{
-  .border{
-    border-bottom: 1px solid red ;
-  }
-  .am-list-content{
-    display: flex;
-    justify-content: space-between;
-  }
-  .active{
-    display: block;
-  }
-  .inactive{
-    display: none;
-  }
+
+.flexbox{
+  display: flex;
+}
+.borderbox {
+  box-sizing: border-box;
+}
+
+.itembox{
+  composes:flexbox;
+  composes:borderbox;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  justify-content: space-between;
+}
+.hasborder{
+  border-bottom: 1px solid #e0e0e0;
+  composes:itembox;
+}
+.itemconatainer{
+  composes:borderbox;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+.am_div_explain{
+  composes:flexbox;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 1rem;
+}
+.color{
+  color: #999;
 }

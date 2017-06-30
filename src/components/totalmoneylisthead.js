@@ -8,11 +8,12 @@ const headmoneystyle = {
   fontSize:rem(36,75),
 }
 export function Head(props) {
-  let stylebox = props.style || headstyle;
+  let stylebox = Object.assign({},headstyle,props.style)
   let stylecontent = props.contentstyle || headmoneystyle;
+  let leftstyle = props.leftstyle;
   return(
-   <div style={stylebox}>
-      <span>{props.money}</span><span style={stylecontent}>{props.number}</span>
+   <div style={stylebox} onClick={(e)=>props.callback(e)}>
+      <span style={leftstyle}>{props.money}</span><span style={stylecontent}>{props.number}</span>
     </div>
 
   )

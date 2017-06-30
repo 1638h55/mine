@@ -7,7 +7,7 @@ import {getTotalmoeny} from '../services/example.js';
 import CSSmodules from 'react-css-modules';
 import styles from '../styles/totalmoney.less';
 import {whiteSpace} from './whitespace';
-import {Head} from './totalmoneylisthead.js';
+import {Head} from './totalmoneylisthead';
 const dotstylered = {
   backgroundColor:'#ff781c',
   width:rem(15,75),

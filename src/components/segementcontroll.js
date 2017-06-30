@@ -1,13 +1,5 @@
 import {SegmentedControl} from 'antd-mobile';
-const boxstyle = {
-  display:'flex',
-  height:"1.173rem",
-  justifyContent:'space-between',
-  alignItems:'center',
-  borderTop:"1px solid #ddd",
-  borderBottom:"1px solid #ddd",
-  width:"90%",
-}
+import {boxstyle} from './variable'
 export function SegementedControl(props){
   return (
     <SegmentedControl
