@@ -1,0 +1,65 @@
+.flexbox{
+  display: flex;
+}
+.borderbox{
+  box-sizing: border-box;
+}
+.am_div_box{
+    composes:borderbox;
+    composes:flexbox;
+    padding: 0.533rem 0.4rem;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.am_list_item{
+  composes:flexbox;
+  justify-content: space-between;
+}
+.am_list_state{
+  composes:borderbox;
+  padding:0.466rem 0.4rem;
+  background-color: #fff;
+}
+.am_list_child{
+  margin-right: 1.12rem;
+}
+.font_size {
+  font-size: 12px;
+}
+[data-dpr='2'] .font_size{
+  font-size: 24px;
+}
+[data-dpr='3'] .font_size{
+  font-size: 36px;
+}
+.am_p_item{
+  composes:font_size;
+  color: #666;
+}
+.am_number_fontsize{
+  font-size: 30px;
+}
+[data-dpr='2'] .am_number_fontsize{
+  font-size: 58px;
+}
+[data-dpr='3'] .am_number_fontsize{
+  font-size: 88px;
+}
+.am_span_rate{
+  composes:am_number_fontsize;
+  color: #ff2a00;
+  display: inline-block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+.am_symbol{
+  font-size: 20px;
+}
+[data-dpr='2'] .am_symbol{
+  font-size: 40px;
+}
+[data-dpr='3'] .am_symbol{
+  font-size: 60px;
+}

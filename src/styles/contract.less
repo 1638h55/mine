@@ -1,0 +1,21 @@
+.othername {
+  composes : second from './third.less';
+}
+.boderbox {
+  box-sizing: border-box;
+}
+.flexbox {
+  display: flex;
+}
+.light {
+  margin-bottom: 0.2rem;
+}
+.flex {
+  composes : boderbox;
+  composes : flexbox;
+  padding:0 0.5rem;
+  color: #333;
+  word-wrap: normal;
+  word-break:break-all;
+  justify-content:space-between;
+}

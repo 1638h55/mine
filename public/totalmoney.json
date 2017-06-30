@@ -1,0 +1,21 @@
+{
+  "property":{
+    "total":{
+      "totalmoney":200000,
+      "balance":2000,
+      "capital":2000,
+      "profit":5000,
+      "frozen":4857
+    },
+    "balance":{
+      "withdraw":588,
+      "notwithdraw":1088
+    },
+    "flow":{
+      "accumulatedrechage":5888,
+      "accumulatedwithdraw":2555,
+      "accumulatedves":5899,
+      "accumulatedprofit":6000
+    }
+  }
+}

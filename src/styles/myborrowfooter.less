@@ -1,0 +1,90 @@
+:global{
+  .am_a_detail{
+    width: 100%;
+  }
+}
+.borderbox {
+  box-sizing: border-box;
+  padding:0.4rem;
+  background-color: #fff;
+}
+.font_size{
+  font-size: 12px;
+}
+[data-dpr='2'] .font_size {
+  font-size: 24px;
+}
+[data-dpr='3'] .font_size {
+  font-size: 42px;
+}
+.flexbox{
+  display: flex;
+}
+.li{
+  composes:borderbox;
+  height: 4rem;
+}
+.direction {
+  composes :flexbox;
+  composes:borderbox;
+  padding-bottom: 0;
+  padding-top: 0.533rem;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+.color{
+  color: red;
+  color: #ff2a00;
+  font-weight: 600;
+}
+.amarrow{
+  position: relative;
+  right: -22%;
+  top: 50%;
+}
+.amimg{
+  object-fit: contain;
+  width: 0.267rem;
+  height: 0.32rem;
+}
+.borrowmoney{
+  composes:flexbox;
+  composes:font_size;
+  flex-direction: column;
+  justify-content: flex-start;
+  height:1.2rem;
+  color: #333;
+}
+.money {
+  composes :color;
+  font-size: 0.48rem;
+  padding-top: 0.2rem;
+}
+.rate {
+  composes :color;
+  composes:font_size;
+}
+.pro {
+  composes:font_size;
+  color: #666;
+}
+.rate_box {
+  margin-top: 0.333rem;
+}
+.state {
+  composes:flexbox;
+  composes:font_size;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.am_span_state{
+  color: #1a90e9;
+  composes:font_size;
+  line-height: 0.85rem;
+}
+.am_span_word{
+  display: inline-block;
+  width: 2rem;
+}

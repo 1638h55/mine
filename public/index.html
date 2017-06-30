@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dva Demo</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+<div id="root" class="am_container"></div>
+
+<script src="index.js"></script>
+<script type="text/javascript">
+(function getAdapte(){
+    var dpr ,rem,scale,width;
+    var docEl=document.documentElement||document.body;
+    var fontEl = document.createElement('style');
+    var metaEl = document.querySelector('meta[name="viewport"]');
+    function throttle(method,context){
+      clearTimeout(method.tId);
+      method.tId=setTimeout(function(){
+              method.call(context);
+          },500);
+      }
+      //调用
+      window.onresize=function(){
+          throttle(myFunc);
+    }
+    function myFunc () {
+        width = docEl.clientWidth > 1300 ? 1300 : docEl.clientWidth;
+        console.log(width);
+    }
+    dpr = window.devicePixelRatio||1;
+	  dpr = dpr>=3 ? 3 :(dpr>=2 ? 2 : 1);
+    rem = docEl.clientWidth*dpr/10;
+    scale = 1/dpr;
+    docEl.setAttribute('data-dpr',dpr);
+    metaEl.setAttribute('content', 'width=' + dpr*docEl.clientWidth + ',initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');
+    docEl.firstElementChild.appendChild(fontEl);
+    fontEl.innerHTML ='html{font-size:'+rem+'px!important}';
+    window.rem =rem;
+    window.dpr=dpr;
+    console.log(dpr);
+    console.log(rem);
+ })()
+</script>
+</body>
+</html>

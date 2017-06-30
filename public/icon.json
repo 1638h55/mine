@@ -1,0 +1,30 @@
+
+{
+    "icon": [
+        {
+            "url": "http://localhost:8000/images/mine_03.png",
+            "account": "我的账号",
+            "path": "/mine/account"
+        },
+        {
+            "url": "http://localhost:8000/images/mine_05.png",
+            "account": "我的出借",
+            "path": "/mine/borrow"
+        },
+        {
+            "url": "http://localhost:8000/images/mine_07.png",
+            "account": "资金流水",
+            "path": "/mine/money"
+        },
+        {
+            "url": "http://localhost:8000/images/mine_09.png",
+            "account": "优惠券",
+            "path": "/mine/discount"
+        },
+        {
+            "url": "http://localhost:8000/images/mine_10.png",
+            "account": "设置",
+            "path": "/mine/settings"
+        }
+    ]
+}

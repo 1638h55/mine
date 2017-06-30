@@ -1,0 +1,22 @@
+
+// ::-webkit-datetime-edit { padding: 1px; background: url(/study/image/selection.gif); }
+// ::-webkit-datetime-edit-fields-wrapper { background-color: #eee; }
+// ::-webkit-datetime-edit-text { color: #4D90FE;}
+// ::-webkit-datetime-edit-year-field { color: purple; }
+// ::-webkit-datetime-edit-month-field { color: blue; }
+// // ::-webkit-datetime-edit-day-field { color: green; }
+// ::-webkit-inner-spin-button { visibility: hidden;}
+::-webkit-calendar-picker-indicator {
+    background: url("http://localhost:8000/images/date_21.png") no-repeat;
+}
+input[type="date"]::before{
+    content:attr(data-placeholder);
+    color:#999;
+    margin-left: 10px;
+    margin-right: 4px;
+}
+.input_date{
+  width:100%;
+  height:100%;
+  background:url('http://localhost:8000/images/date_21.png') 96% 50% no-repeat;
+}

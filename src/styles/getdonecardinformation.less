@@ -1,0 +1,38 @@
+.flexbox{
+  display: flex;
+  justify-content: space-between;
+}
+.font_size{
+  font-size: 14px;
+}
+[data-dpr='2'] .font_size{
+  font-size: 28px;
+}
+[data-dpr='3'] .font_size{
+  font-size: 42px;
+}
+.borderbox{
+  box-sizing: border-box;
+  padding:0.2rem 0.4rem;
+}
+.li{
+  composes:flexbox;
+  composes:borderbox;
+  composes:font_size;
+  height: 0.9rem;
+  border-top: 1px solid #666;
+
+}
+.lione{
+  composes:li;
+  margin-top:0.5rem;
+}
+.litwo{
+  composes:li;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #666;
+}
+.lilast{
+  composes:li;
+  border-bottom: 1px solid #666;
+}

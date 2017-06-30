@@ -1,0 +1,26 @@
+.border{
+  border-bottom: 1px solid grey;
+}
+.am_div_money{
+  composes:flexbox from './single.less';
+  composes :am_div_box from './single.less';
+}
+.am_input_money{
+  composes :borderbox from './single.less';
+    composes:border;
+}
+.am_p_maxmoeny{
+  flex: 1;
+  text-align: right;
+
+}
+.am_div_lastmoney{
+  composes:flexbox from './single.less';
+  padding: 0.2rem 0.4rem;
+  background-color: #fff;
+  composes:border;
+}
+.am_div_discount{
+  composes :am_input_money;
+  composes:border;
+}

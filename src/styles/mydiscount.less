@@ -1,0 +1,130 @@
+.borderbox {
+  box-sizing: border-box;
+  padding:0.4rem 0;
+}
+.font_size {
+  font-size: 14px;
+}
+[data-dpr='2'] .font_size {
+  font-size: 28px;
+}
+[data-dpr='3'] .font_size {
+  font-size: 42px;
+}
+.am_a_detail{
+  display: inline-block;
+  width: 100%;
+}
+.am_ul_box{
+  box-sizing: border-box;
+  padding: 0 0.267rem;
+  background-color:#efeff4;
+}
+.am_li_flexbox{
+  composes:font_size;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.134rem;
+  background-color: #fff;
+  height: 3.2rem;
+  overflow: hidden;
+  position: relative;
+}
+.am_line_box{
+  height: 0.13rem;
+  width: 100%;
+  background-color:#ff2a00;
+}
+.am_block_box{
+  flex:1;
+  display: flex;
+}
+.am_div_flexbox{
+  display: flex;
+  margin-top:0.267rem;
+  margin-bottom:0.533rem;
+  flex-direction: column;
+  flex: 1;
+}
+.am_div_left{
+  composes:am_div_flexbox;
+  width: 4.133rem;
+  border-right: 1px solid #666;
+}
+.am_div_right{
+  composes:am_div_flexbox;
+  padding-left: 0.533rem;
+  justify-content: space-between;
+  position: relative;
+}
+// :global(.am_a_detail){
+//   display: inline-block;
+//   width: 100%;
+// }
+.font_size_money{
+  font-size: 40px;
+}
+[data-dpr='2'] .font_size_money{
+  font-size: 80px;
+}
+[data-dpr='3'] .font_size_money{
+  font-size: 120px;
+}
+.am_div_pirce{
+  composes:font_size_money;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: red;
+}
+.am_span_symbol{
+  font-size: 20px;
+  margin-top: 0.36rem;
+}
+[data-dpr='2'] .am_span_symbol{
+  font-size: 40px;
+}
+[data-dpr='3'] .am_span_symbol{
+  font-size: 60px;
+}
+.font_size {
+  font-size: 12px;
+  color: #666;
+}
+[data-dpr='2'] .font_size {
+  font-size: 24px;
+}
+[data-dpr='3'] .font_size {
+  font-size: 36px;
+}
+.am_div_text{
+  composes:font_size;
+  text-align: center;
+}
+
+.font_size_invest {
+  font-size: 14px;
+}
+[data-dpr='2'] .font_size_invest{
+  font-size: 28px;
+}
+[data-dpr='3'] .font_size_invest{
+  font-size: 42px;
+}
+.am_div_inest {
+  composes:font_size_invest;
+  color: #ff2a00;
+  padding-bottom: 0.2rem;
+  padding-top: 0.2rem;
+}
+.am_p_time{
+  composes:font_size;
+  color: #000;
+  padding-bottom: 0.1rem;
+}
+.am_p_text {
+  composes:am_div_text;
+  text-align: left;
+}

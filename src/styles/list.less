@@ -1,0 +1,119 @@
+section ul{
+  height: auto;
+  display: flex;
+  padding: 0;
+  margin:0;
+  flex-direction: column;
+}
+section ul li {
+  height: 4.347rem;
+  width: 100%;
+  border: 1px solid green;
+  margin:0.267rem auto auto auto;
+  position: relative;
+  box-sizing: border-box;
+  padding:0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+section ul li div:nth-child(1) {
+  width: 100%;
+  box-sizing: border-box;
+  padding:0.15rem;
+  height: 0.6rem;
+  color: #666;
+}
+[data-dpr='2'] section ul li div:nth-child(1){
+  font-size: 28px;
+}
+[data-dpr='3'] section ul li div:nth-child(1){
+  font-size: 42px;
+}
+[data-dpr='2'] section ul li div:nth-child(2){
+  font-size: 36px;
+}
+[data-dpr='3'] section ul li div:nth-child(2){
+  font-size: 48px;
+}
+section ul li div:nth-child(2){
+  height:0.6rem;
+  margin-top:-0.4rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  color: #ff2a00;
+}
+section ul li div:nth-child(2) span {
+  display: inline-block;
+  height: 100%;
+}
+[data-dpr='2'] section ul li div:nth-child(2)>span:nth-child(2)::after{
+  font-size: 24px;
+}
+[data-dpr='3'] section ul li div:nth-child(2)>span:nth-child(2)::after{
+  font-size: 36px;
+}
+section ul li div:nth-child(2)>span:nth-child(1)::after{
+  content: "\A约定年化利率";
+   white-space: pre;
+   color: #999;
+}
+[data-dpr='2'] section ul li div:nth-child(2)>span:nth-child(1)::after{
+  font-size: 24px;
+}
+[data-dpr='3'] section ul li div:nth-child(2)>span:nth-child(1)::after{
+  font-size: 36px;
+}
+section ul li div:nth-child(2)>span:nth-child(n+2)>span{
+  color: #333;
+}
+section ul li div:nth-child(2)>span:nth-child(2)::after{
+  content: "\A产品期限";
+  white-space: pre;
+  color: #999;
+}
+section ul li div:nth-child(2)>span:nth-child(3)::after{
+  content: "\A可投金额";
+  white-space: pre;
+  color: #999;
+}
+[data-dpr='2'] section ul li div:nth-child(2)>span:nth-child(3)::after{
+  font-size: 24px;
+}
+[data-dpr='3'] section ul li div:nth-child(2)>span:nth-child(3)::after{
+  font-size: 48px;
+}
+section ul li div:nth-child(3){
+  width: 100%;
+  color: #fff;
+  background-color: #f50;
+  margin:0 auto;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 0.933rem;
+}
+[data-dpr='2'] section ul li div:nth-child(3){
+  font-size: 36px;
+}
+[data-dpr='3'] section ul li div:nth-child(3){
+  font-size: 48px;
+}
+[data-dpr='2'] section ul li div:nth-child(4){
+  font-size: 24px;
+}
+[data-dpr='3'] section ul li div:nth-child(4){
+  font-size: 36px;
+}
+section ul li div:nth-child(4){
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.093rem;
+  height:1.093rem;
+  background: url("http://localhost:8000/images/pro_07.png") left top no-repeat;
+  background-size: 100%;
+}
+[data-dpr='2'] section ul li div:nth-child(4){
+
+}
