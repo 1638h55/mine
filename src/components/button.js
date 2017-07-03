@@ -2,7 +2,7 @@
 import {Button} from 'antd-mobile';
 import {smallbutton} from './variable';
 export function myButton(callback,{style,loaded,disabled,children}){
-  style = style || buttonstyle;
+  style = style || smallbutton;
   return (
     <Button
           size="small"

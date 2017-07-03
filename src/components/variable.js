@@ -36,4 +36,37 @@ const boxstyle = {
   borderBottom:"1px solid #ddd",
   width:"90%",
 }
-export {navstyle,spanstyle,url,buttonstyle,smallbutton,boxstyle}
+const loadmore_buttonstyle = {
+  color:"#f50",
+  display:'flex',
+  flexDirection:'column',
+  alignItems:'center',
+  fontSize:rem(24,75),
+}
+const loadmore_img = {
+  marginTop:rem(10,75),
+  width:rem(20,75),
+  height:rem(18,75),
+  objectFit:'contain',
+}
+const loadmorestyle = {
+  margin:"0 auto",
+  marginTop:"1rem",
+  backgroundColor: "inherit",
+  width: "5.12rem",
+  height: '1.467rem',
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+}
+export {navstyle,
+        spanstyle,
+        url,
+        buttonstyle,
+        smallbutton,
+        boxstyle,
+        loadmore_buttonstyle,
+        loadmore_img,
+        loadmorestyle
+    }

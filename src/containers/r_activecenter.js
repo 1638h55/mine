@@ -1,27 +1,36 @@
 import React from 'react';
 import { RefreshControl, ListView } from 'antd-mobile';
+import MyNavBar from '../components/navbar';
+import {rem} from 'polished';
 import ActiveCenterList from '../components/activecenter.js';
+import {Dot} from '../components/dot';
 const data = [
   {
     img: 'https://zos.alipayobjects.com/rmsportal/dKbkpPXKfvZzWCM.png',
-    title: 'Meet hotel',
-    des: '不是所有的兼职汪都需要风吹日晒',
+    title: '端午节',
+    des: 'time',
   },
   {
     img: 'https://zos.alipayobjects.com/rmsportal/XmwCzSeJiqpkuMB.png',
-    title: 'McDonald\'s invites you',
-    des: '不是所有的兼职汪都需要风吹日晒',
+    title: '端午节',
+    des: '2017-02-05',
   },
   {
     img: 'https://zos.alipayobjects.com/rmsportal/hfVtzEhPzTUewPm.png',
-    title: 'Eat the week',
-    des: '不是所有的兼职汪都需要风吹日晒',
+    title: '端午节',
+    des: '2017-02-05',
   }
 ];
 let index = data.length - 1;
 
 let pageIndex = 0;
-
+const dotstsyle = {
+  top:"30%",
+  right:0,
+  backgroundColor:'#ff2a00',
+  width:rem(20,75),
+  height:rem(20,75),
+}
 export default class ActiveCenter extends React.Component {
   constructor(props) {
     super(props);
@@ -57,9 +66,7 @@ export default class ActiveCenter extends React.Component {
         key={`${sectionID}-${rowID}`}
         style={{
           backgroundColor: '#F5F5F9',
-          height: 8,
-          borderTop: '1px solid #ECECED',
-          borderBottom: '1px solid #ECECED',
+          height: "0.333rem",
         }}
       />
     );
@@ -71,44 +78,51 @@ export default class ActiveCenter extends React.Component {
       return (
         <div key={rowID}
           style={{
-            padding: '0.08rem 0.16rem',
+            paddingLeft:"0.267rem",
+            paddingRight:'0.267rem',
             backgroundColor: 'white',
+            borderRadius:rem(10,75),
+           border:"1px solid #ddd",
           }}
         >
-          <h3 style={{ padding: 2, marginBottom: '0.08rem', borderBottom: '1px solid #F6F6F6' }}>
+          <h5 style={{height:rem(65,75),fontSize:rem(26,75),lineHeight:rem(65,75),position:'relative'}}>
             {obj.title}
-          </h3>
-          <div style={{ display: '-webkit-box', display: 'flex' }}>
-            <img style={{ height: '1.28rem', marginRight: '0.08rem' }} src={obj.img} alt="icon" />
-            <div style={{ display: 'inline-block' }}>
-              <div style={{ margin: '0.1rem 0 0.2rem 0' }}>{obj.des}-{rowData}</div>
-              <div><span style={{ fontSize: '1.6em', color: '#FF6E27' }}>35</span>元/任务</div>
-            </div>
+            <Dot style={dotstsyle}/>
+          </h5>
+          <div style={{height:rem(234,75),backgroundColor:'#e5e5e5'}}>
+
+          </div>
+          <div style={{height:rem(60,75),lineHeight:rem(60,75),textAlign:'right'}}>
+              {obj.des}
           </div>
         </div>
       );
     };
     return (
-      <ListView
-        dataSource={this.state.dataSource}
-        renderRow={row}
-        renderSeparator={separator}
-        initialListSize={5}
-        pageSize={5}
-        scrollRenderAheadDistance={200}
-        scrollEventThrottle={20}
-        onScroll={this.onScroll}
-        style={{
-          height: document.documentElement.clientHeight,
-          border: '1px solid #ddd',
-          margin: '0.1rem 0',
-        }}
-        scrollerOptions={{ scrollbars: true }}
-        refreshControl={<RefreshControl
-          refreshing={this.state.refreshing}
-          onRefresh={this.onRefresh}
-        />}
-      />
+      <div>
+        <MyNavBar title="活动中心"/>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={row}
+          renderSeparator={separator}
+          initialListSize={5}
+          pageSize={5}
+          scrollRenderAheadDistance={200}
+          scrollEventThrottle={20}
+          onScroll={this.onScroll}
+          style={{
+            height: document.documentElement.clientHeight,
+            margin: '0.1rem 0.3rem',
+          }}
+          scrollerOptions={{ scrollbars: true }}
+          refreshControl={<RefreshControl
+            refreshing={this.state.refreshing}
+            onRefresh={this.onRefresh}
+          />}
+        />
+        <div style={{textAlign:"center"}}>向下滑动加载更多</div>
+      </div>
+
     );
   }
 }

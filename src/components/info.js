@@ -7,6 +7,7 @@ import SinglePro from '../containers/singlecontainer';
 import LastMoney from '../containers/lastmoney';
 import {LoadMoreDetails} from './moredetail';
 import {rem} from 'polished';
+import {loadMoreButton} from './loadmorebutton';
 const whitestyle = {
   height:rem(25,75),
 }
@@ -31,12 +32,7 @@ export default class Info extends React.Component{
         {whiteSpace(whitestyle)}
         <DoneBorrow />
         {this.state.show ? <LoadMoreDetails/> : "" }
-        <Button onClick={this.loadMore}
-          children="点击查看更多详情"
-          ></Button>
-          <NoticeBar mode="closable">
-        好收益警告，理财有风险，投资需谨慎
-      </NoticeBar>
+        {loadMoreButton(this.state.show,this.loadMore)}
       </div>
     )
   }

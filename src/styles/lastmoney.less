@@ -1,26 +1,96 @@
+
+.fontsize{
+  font-size: 12px;
+}
+[data-dpr='2'] .fontsize{
+  font-size: 24px;
+}
+[data-dpr='3'] .fontsize{
+  font-size: 36px;
+}
+.color{
+  color: #f50;
+}
+.fontsizebig {
+  font-size: 18px;
+}
+[data-dpr='2'] .fontsizebig{
+  font-size: 36px;
+}
+[data-dpr='3'] .fontsizebig{
+  font-size: 54px;
+}
 .border{
-  border-bottom: 1px solid grey;
+  border-top:1px solid #e0e0e0;
+}
+.borderbox {
+  box-sizing: border-box;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+.flexbox {
+  display: flex;
+}
+.box{
+  composes:fontsize;
+  box-sizing: border-box;
+  padding-left:0.4rem;
+  padding-right: 0.4rem;
+  padding-top: 0.4rem;
+  background-color: #fff;
+}
+.paddingbottom {
+  padding-bottom: 0.533rem;
 }
 .am_div_money{
-  composes:flexbox from './single.less';
-  composes :am_div_box from './single.less';
+  composes:flexbox;
+  color: #333;
 }
 .am_input_money{
-  composes :borderbox from './single.less';
-    composes:border;
-}
-.am_p_maxmoeny{
-  flex: 1;
-  text-align: right;
-
+  composes:paddingbottom;
 }
 .am_div_lastmoney{
-  composes:flexbox from './single.less';
-  padding: 0.2rem 0.4rem;
-  background-color: #fff;
-  composes:border;
+  composes:paddingbottom;
+  composes:flexbox;
+  margin-top: 0px;
 }
 .am_div_discount{
-  composes :am_input_money;
   composes:border;
+  composes:borderbox;
+  composes:flexbox;
+  justify-content: space-between;
+  line-height: 0.32rem;
+}
+.am_input_money {
+  composes:border;
+  composes:borderbox;
+  composes:flexbox;
+  justify-content: space-between;
+}
+.am_p_maxmoeny{
+  color: #1a90e9;
+  flex:1;
+  text-align: right;
+}
+.input{
+  margin-left: -0.4rem;
+}
+.img{
+  width: 0.267rem;
+  height: 0.32rem;
+  object-fit: contain;
+  margin-left: 0.2rem;
+}
+.am_span_bond{
+  font-weight: bold;
+  color: #f50;
+}
+.am_span_p{
+  composes:flexbox;
+  align-items: center;
+  color: #999;
+}
+.am_span_profit{
+  composes:color;
+  composes:fontsizebig;
 }

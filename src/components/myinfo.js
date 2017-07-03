@@ -46,6 +46,9 @@ const arrowpic = {
   height:rem(24,75),
   width:rem(20,75),
 }
+const ulstyle = {
+  backgroundColor:'#fff',
+}
 export default class List extends React.Component {
   constructor(props){
     super(props)
@@ -57,7 +60,7 @@ export default class List extends React.Component {
   }
   render () {
     return (
-      <ul>
+      <ul style={ulstyle}>
         {this.state.data.map((value,index)=>{
            return <li key={index} style={li}>
                   <Link to={value.path} style={a}>

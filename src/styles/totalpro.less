@@ -3,6 +3,7 @@
   border-top:1px solid grey;
   border-bottom: 1px solid grey;
   margin-top:0.2rem;
+  background-color: #fff;
 }
 .am_span_text{
   display: block;
@@ -30,39 +31,34 @@
 .one{
   composes:flexbox;
 }
-:global{
-  .badge{
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 0;
-    border-left: 0.8rem solid transparent;
-    border-bottom: 0.8rem solid transparent;
-  }
-  .badge-saling{
-    border-top: 0.8rem solid yellow;
-    border-right: 0.8rem solid yellow;
-  }
-  .badge-recon{
-    border-top: 0.8rem solid red;
-    border-right: 0.8rem solid red;
-  }
-  .badge-over{
-    border-top: 0.8rem solid #999;
-    border-right: 0.8rem solid #999;
-    color:#fff;
-  }
-  .am_p_text{
-    position: absolute;
-    top: -0.53rem;
-    left:-0.1rem;
-    width: 1.2rem;
-    font-size: 12px;
-  }
-  [data-dpr='2'] .am_p_text{
-    font-size: 24px;
-  }
-  [data-dpr='3'] .am_p_text{
-    font-size: 36px;
-  }
+.am_div_empty{
+  margin: 0 auto;
+  margin-top: 50%;
+  width:3.467rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.am_img {
+  width:3.467rem;
+  height: 2.213rem;
+  object-fit: contain;
+}
+.color{
+  color: #b2b2b2;
+}
+.fontsize{
+  font-size: 14px;
+}
+[data-dpr='2'] .fontsize{
+  font-size: 28px;
+}
+[data-dpr='3'] .fontsize{
+  font-size: 42px;
+}
+.am_div_con{
+  composes:color;
+  composes:fontsize;
+  text-align: center;
+  margin-top: 0.6rem;
 }
