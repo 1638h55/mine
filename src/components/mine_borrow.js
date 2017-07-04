@@ -2,19 +2,13 @@ import React from 'react';
 import {Tag,SegmentedControl} from 'antd-mobile';
 import CSSModules from 'react-css-modules';
 import MyNavBar from './navbar.js';
-import {whiteSpace} from './whitespace.js';
+import {whiteSpace} from './whitespace';
 import {FilterWindow} from './fifter';
 import styles from '../styles/myborrow.less';
-import MyBorrowList from '../containers/myborrowlist.js';
+import MyBorrowList from '../containers/myborrowlist';
 const whitestyle = {
   height:"0.333rem",
   backgroundColor:"#efeff4",
-}
-function callback(key) {
-  console.log('onChange', key);
-}
-function handleTabClick(key) {
-  console.log('onTabClick', key);
 }
 class MyBorrow extends React.Component {
   constructor(props) {
@@ -71,16 +65,16 @@ class MyBorrow extends React.Component {
     return(
       <div>
       <MyNavBar title="我的出借"/>
-      <div styleName="box">
+      <div className="box-segement">
         <SegmentedControl
           values={['全部', '还款中', '还款完成']}
           onChange={this.switch}
-          styleName="am_segmented_custom"
+          className="am_segmented_custom"
         />
         <Tag onChange={this.onChange}>筛选</Tag>
       </div>
       {whiteSpace(whitestyle)}
-      <MyBorrowList what={this.state.choosewhat}/>
+      <MyBorrowList path="/mine/borrow/info" what={this.state.choosewhat}/>
       {this.state.isShow ? <FilterWindow
             close={this.close}
             controller={this.controll}

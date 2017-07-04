@@ -1,6 +1,6 @@
-import React from 'react';
-import PayBackInfoList from '../components/paybackinfo.js';
-import {any} from '../services/example.js';
+import React from 'react'
+import PayBackInfoList from '../components/paybackinfo'
+import {any} from '../services/example'
 class PayBackInfoContainer extends React.Component {
   constructor(props){
     super(props)
@@ -18,7 +18,7 @@ class PayBackInfoContainer extends React.Component {
       this.setState({
         paybackinfo:res.data.products
       })
-    });
+    })
   }
 }
 export default PayBackInfoContainer

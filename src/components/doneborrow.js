@@ -1,7 +1,7 @@
 
-import {List} from 'antd-mobile';
-import {Head} from '../components/totalmoneylisthead';
-import {rem} from 'polished';
+import {List} from 'antd-mobile'
+import {Head} from '../components/totalmoneylisthead'
+import {rem} from 'polished'
 import {whiteSpace} from './whitespace'
 const headstyle = {
   fontSize:rem(24,75),
@@ -33,9 +33,9 @@ const whitestyle = {
   height:rem(25,75)
 }
 function mergeStyle(obj,ano){
-  return Object.assign({},obj,ano);
+  return Object.assign({},obj,ano)
 }
-const spaccolor = mergeStyle(span,{color:'#f50',fontSize:rem(36,75)});
+const spaccolor = mergeStyle(span,{color:'#f50',fontSize:rem(36,75)})
 export function DoneBorrowUi (props){
   return(
     <div>

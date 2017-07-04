@@ -9,7 +9,7 @@ export function tabBars(state,callback,choosetime){
         <SegementedControl value={value} fn={choosetime}/>
         </TabPane>
         <TabPane tab="项目债转" key="2">
-          <div>项目债转</div>
+        <SegementedControl value={value} fn={choosetime}/>
         </TabPane>
   </Tabs>
   )

@@ -1,21 +1,27 @@
 import React from 'react';
 import { RefreshControl, ListView} from 'antd-mobile';
-import TotalProUi from '../components/totalproui.js';
-import {getTotalPro} from '../services/example';
+import TotalProUi from '../components/totalproui';
+import {getTotalborrow,getTotalTransfer} from '../services/example';
 import Footer from '../components/footer.js';
 import {tabBars} from '../components/tabbar';
 export default class BorrowContainer extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      items:[]
+      items:[],
+      show:true,
     }
   }
   callback=(key)=>{
-    console.log(key)
-    this.setState({
-      items:null
-    })
+    if(key=="1"){
+     getTotalborrow().then(res=>this.setState({
+       items:res.data.products
+     }))
+    }if(key=='2'){
+      getTotalTransfer().then(res=>this.setState({
+        items:res.data.products
+      }))
+    }
   }
   choosetime=(key)=>{
     console.log(key)
@@ -30,7 +36,7 @@ export default class BorrowContainer extends React.Component{
     )
   }
   componentDidMount () {
-    getTotalPro().then(res=>this.setState({
+    getTotalborrow().then(res=>this.setState({
       items:res.data.products || null
     }));
   }

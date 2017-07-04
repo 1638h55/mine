@@ -5,7 +5,6 @@ import {proLists} from './lists.js';
 class TotalPro extends React.Component{
   constructor(props){
     super(props)
-
   }
   render () {
     return(
@@ -20,8 +19,7 @@ class TotalPro extends React.Component{
     )
   }
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps.items)
+  //  console.log(nextProps.items)
   }
 }
 export default CSSModules(TotalPro,styles)
- 

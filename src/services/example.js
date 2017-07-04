@@ -64,6 +64,14 @@ const getAccoutinfo = function(){
 const getIcon = function(){
   return request('/icon.json');
 }
+//项目出借
+const getTotalborrow = function() {
+  return request('/data.json')
+}
+//项目债转
+const getTotalTransfer = function() {
+  return request('/data.json')
+}
 export {query,any,
       getCardDetail,
       getProfit,
@@ -74,5 +82,7 @@ export {query,any,
       accountLogin,
       mobileLogin,
       userRegister,
-      getIcon
+      getIcon,
+      getTotalborrow,
+      getTotalTransfer
     }

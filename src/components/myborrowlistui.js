@@ -1,9 +1,12 @@
-import React from 'react';
-import {Link} from 'dva/router';
-import {rem} from 'polished';
-import CSSModules from 'react-css-modules';
-import styles from '../styles/myborrowfooter.less';
-import {whiteSpace} from "./whitespace";
+import React from 'react'
+import {Link} from 'dva/router'
+import {rem} from 'polished'
+import { RefreshControl, ListView } from 'antd-mobile'
+import CSSModules from 'react-css-modules'
+import styles from '../styles/myborrowfooter.less'
+import {whiteSpace} from "./whitespace"
+import {showList} from './listview'
+// import {showList} from './anothershowlist'
 const whtitestyle = {
   height:rem(25,75),
   backgroundColor:"#efeff4",
@@ -11,34 +14,38 @@ const whtitestyle = {
 class MyBorrowListUi extends React.Component {
   constructor(props){
     super(props)
-    this.state = {
-      pro : this.props.productlists
+    const dataSource = new ListView.DataSource({
+      rowHasChanged: (row1, row2) => row1 !== row2,
+    })
+
+    this.initData = []
+    for (let i = 0 ;i < 20; i++) {
+      this.initData.push(`r${i}`)
     }
+    this.state = {
+      pro : this.props.productlists,
+      dataSource: dataSource.cloneWithRows(this.initData),
+      refreshing: false
+    }
+  }
+  onRefresh = () => {
+    this.setState({ refreshing: true })
+    setTimeout(() => {
+      this.initData = [`ref${pageIndex++}`, ...this.initData]
+      this.setState({
+        dataSource: this.state.dataSource.cloneWithRows(this.initData),
+        refreshing: false,
+      })
+    }, 1000)
+  }
+  onScroll = () => {
+    console.log('sss')
   }
   render (){
     return (
       <ul>
-        {this.state.pro.map(({money,name},index)=>{
-          return <Link to='/mine/borrow/info' className="am_a_detail" key={index} >
-            <li styleName='li'>
-          <p styleName="pro">{name}<span styleName='amarrow'><img styleName='amimg' alt="" src="http://localhost:8000/images/arrow_10.png"/></span></p>
-          <div styleName='direction'>
-            <div styleName="borrowmoney">
-                <div>出借金额</div>
-                <div styleName='money'>{money}</div>
-            </div>
-            <div styleName="borrowmoney">
-                <div>预计收益：<span styleName='color'>2522元</span></div>
-                <div styleName="rate_box">年化率：<span styleName='rate'>12.5%</span></div>
-            </div>
-          </div>
-          <div styleName="state">
-            <div><span styleName="am_span_word">状态：</span><span styleName='am_span_state'>还款中</span></div>
-            <div><span styleName="am_span_word">起止日期：</span><span>2017-05-17至2017-08-16</span></div>
-          </div>
-          </li>
-          {whiteSpace(whtitestyle)}
-          </Link>
+        {this.state.pro.map(({path,money,name})=>{
+          return showList({path,money,name})
         })}
       </ul>
 
@@ -46,14 +53,20 @@ class MyBorrowListUi extends React.Component {
   }
   //修改组件的状态
   componentWillReceiveProps (nextProps) {
+  let arr = []
+  //根据不同的债转类型跳转不同的页面
+  let path = {path:nextProps.path}
+  arr = nextProps.productlists.map(items=>{
+    return Object.assign({},items,path)
+  })
     this.setState({
-      pro : nextProps.productlists
-    });
+      pro : arr
+    })
   }
 
   //是否需要更新
   shouldComponentUpdate () {
-      return true;
+      return true
   }
 
 

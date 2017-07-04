@@ -8,12 +8,9 @@ export default class MyBorrowList extends React.Component {
       productlists:[1,2,3]
     }
   }
-  componentWillMount () {
-
-  }
   render () {
     return(
-        <MyBorrowListUi {...this.state} />
+        <MyBorrowListUi {...this.state} path={this.props.path}/>
     )
   }
   //查看状态是否已更新
@@ -31,6 +28,6 @@ export default class MyBorrowList extends React.Component {
   }
   componentWillReceiveProps(nextprops){
     //传递不同的参数
-    console.log(nextprops);
+    //console.log(nextprops);
   }
 }

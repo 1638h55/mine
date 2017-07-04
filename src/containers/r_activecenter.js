@@ -1,9 +1,9 @@
-import React from 'react';
-import { RefreshControl, ListView } from 'antd-mobile';
-import MyNavBar from '../components/navbar';
-import {rem} from 'polished';
-import ActiveCenterList from '../components/activecenter.js';
-import {Dot} from '../components/dot';
+import React from 'react'
+import { RefreshControl, ListView } from 'antd-mobile'
+import MyNavBar from '../components/navbar'
+import {rem} from 'polished'
+import ActiveCenterList from '../components/activecenter.js'
+import {Dot} from '../components/dot'
 const data = [
   {
     img: 'https://zos.alipayobjects.com/rmsportal/dKbkpPXKfvZzWCM.png',
@@ -20,10 +20,10 @@ const data = [
     title: '端午节',
     des: '2017-02-05',
   }
-];
-let index = data.length - 1;
+]
+let index = data.length - 1
 
-let pageIndex = 0;
+let pageIndex = 0
 const dotstsyle = {
   top:"30%",
   right:0,
@@ -33,33 +33,33 @@ const dotstsyle = {
 }
 export default class ActiveCenter extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     const dataSource = new ListView.DataSource({
       rowHasChanged: (row1, row2) => row1 !== row2,
-    });
+    })
 
-    this.initData = [];
-    for (let i = 0; i < 20; i++) {
-      this.initData.push(`r${i}`);
+    this.initData = []
+    for (let i = 0;i < 20;i++) {
+      this.initData.push(`r${i}`)
     }
     this.state = {
       dataSource: dataSource.cloneWithRows(this.initData),
       refreshing: false,
-    };
+    }
   }
   onRefresh = () => {
-    this.setState({ refreshing: true });
+    this.setState({ refreshing: true })
     setTimeout(() => {
-      this.initData = [`ref${pageIndex++}`, ...this.initData];
+      this.initData = [`ref${pageIndex++}`, ...this.initData]
       this.setState({
         dataSource: this.state.dataSource.cloneWithRows(this.initData),
         refreshing: false,
-      });
-    }, 1000);
-  };
+      })
+    }, 1000)
+  }
   onScroll = () => {
-    console.log('sss');
-  };
+    console.log('sss')
+  }
   render() {
     const separator = (sectionID, rowID) => (
       <div
@@ -69,12 +69,12 @@ export default class ActiveCenter extends React.Component {
           height: "0.333rem",
         }}
       />
-    );
+    )
     const row = (rowData, sectionID, rowID) => {
       if (index < 0) {
-        index = data.length - 1;
+        index = data.length - 1
       }
-      const obj = data[index--];
+      const obj = data[index--]
       return (
         <div key={rowID}
           style={{
@@ -96,8 +96,8 @@ export default class ActiveCenter extends React.Component {
               {obj.des}
           </div>
         </div>
-      );
-    };
+      )
+    }
     return (
       <div>
         <MyNavBar title="活动中心"/>
@@ -123,6 +123,6 @@ export default class ActiveCenter extends React.Component {
         <div style={{textAlign:"center"}}>向下滑动加载更多</div>
       </div>
 
-    );
+    )
   }
 }

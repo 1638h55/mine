@@ -12,6 +12,11 @@
             "path": "/mine/borrow"
         },
         {
+            "url": "http://localhost:8000/images/mine_05.png",
+            "account": "我的债转",
+            "path": "/mine/transfer"
+        },
+        {
             "url": "http://localhost:8000/images/mine_07.png",
             "account": "资金流水",
             "path": "/mine/money"
