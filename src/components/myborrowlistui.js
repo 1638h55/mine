@@ -44,8 +44,8 @@ class MyBorrowListUi extends React.Component {
   render (){
     return (
       <ul>
-        {this.state.pro.map(({path,money,name})=>{
-          return showList({path,money,name})
+        {this.state.pro.map(({path,money,name},index)=>{
+          return showList({path,money,name,index})
         })}
       </ul>
 

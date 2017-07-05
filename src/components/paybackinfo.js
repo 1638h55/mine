@@ -49,7 +49,12 @@ class PayBackInfo extends React.Component {
   }
   render () {
     return (
-        <List renderHeader={() => <Head money="还款信息" style={boxstyle} callback={this.onChange} leftstyle={leftstyle} contentstyle={this.state.contentstyle}/>}>
+        <List renderHeader={() => <Head
+                                    money="还款信息"
+                                    style={boxstyle}
+                                    callback={this.onChange}
+                                    leftstyle={leftstyle}
+                                    contentstyle={this.state.contentstyle}/>}>
         {this.state.clicked ?  <div styleName="itemconatainer">
             <div styleName="hasborder">
              <div styleName="am_div_explain">

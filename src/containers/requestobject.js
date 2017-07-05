@@ -16,7 +16,7 @@ export default class Objects extends React.Component {
   }
   componentDidMount () {
     any().then(res=>this.setState({
-      items:res.data.products
+      items:res.data.products||null
     },function(){
       console.log(this.state.items)
     }));

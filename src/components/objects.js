@@ -18,7 +18,7 @@ class Objects extends React.Component {
   render () {
     return (
       <ul>
-        {this.props.items.map((value,index)=>{
+        {this.props.items ? this.props.items.map((value,index)=>{
           return <li key={index}>
           <div>{value.name}</div>
           <div>
@@ -29,7 +29,7 @@ class Objects extends React.Component {
           <div onClick={this.goDetailPages}>立即抢</div>
           <div></div>
           </li>
-        })}
+        }):<div styleName='picturebox'><img styleName='picture' alt="" src='/images/box.png'/><span styleName='text'>暂无推荐项目</span></div>}
       </ul>
     )
   }

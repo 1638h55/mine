@@ -3,38 +3,116 @@
   width: 100%;
   height: auto;
 }
+.borderbox{
+  box-sizing: border-box;
+}
+.fontsize{
+  font-size: 14px;
+}
+[data-dpr='2'] .fontsize{
+  font-size: 28px;
+}
+[data-dpr='3'] .fontsize{
+  font-size: 42px;
+}
 .li{
+  composes:borderbox;
   position: relative;
-  border-top:1px solid grey;
-  border-bottom: 1px solid grey;
-  margin-top:0.2rem;
   background-color: #fff;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
 }
 .am_span_text{
   display: block;
 }
-.borderbox{
-  box-sizing: border-box;
-}
 .flexbox{
   display: flex;
+
+}
+.box{
+  composes:flexbox;
   flex-direction: column;
   justify-content: space-around;
 }
-.box{
-  composes:borderbox;
-  composes:flexbox;
-  height: 3rem;
-  padding:0.2rem;
-  border-bottom: 1px solid grey;
+.boxname{
+  composes:fontsize;
+  height: 1.173rem;
+  line-height: 1.173rem;
+  color: #333;
 }
 .boxchild{
-  display: flex;
-  justify-content: space-around;
-  flex: 1;
+  composes:flexbox;
+  composes:borderbox;
+  justify-content: space-between;
+  padding-left: 0.666rem;
+  padding-right: 0.666rem;
+  border-top:1px solid #e0e0e0;
+  border-bottom:1px solid #e0e0e0;
+}
+.p_number_color{
+  color: #ff2a00;
 }
 .one{
   composes:flexbox;
+  composes:borderbox;
+  composes:p_number_color;
+  padding-top: 0.46rem;
+  padding-bottom: 0.333rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.p_number_fontsize{
+  font-size: 16px;
+}
+[data-dpr='2'] .p_number_fontsize{
+  font-size: 32px;
+}
+[data-dpr='3'] .p_number_fontsize{
+  font-size: 48px;
+}
+.am_div_day{
+  composes:p_number_fontsize;
+}
+.am_p_number{
+  composes:p_number_color;
+  composes:p_number_fontsize;
+  margin-bottom: 0.26rem;
+}
+.am_p_rate{
+  font-size: 30px;
+}
+[data-dpr='2'] .am_p_rate{
+  font-size: 60px;
+}
+[data-dpr='3'] .am_p_rate{
+  font-size: 90px;
+}
+.fontsizetext {
+  font-size: 12px;
+}
+[data-dpr='2'] .fontsizetext{
+  font-size: 24px;
+}
+[data-dpr='3'] .fontsizetext{
+  font-size: 36px;
+}
+.color_p_text{
+  color: #999;
+}
+.am_p_text{
+  composes:fontsizetext;
+  composes:color_p_text;
+}
+.am_div_lastmoney{
+  composes:fontsizetext;
+  composes:color_p_text;
+  composes:flexbox;
+  justify-content: space-between;
+  height: 0.867rem;
+  line-height: 0.867rem;
 }
 .am_div_empty{
   margin: 0 auto;
