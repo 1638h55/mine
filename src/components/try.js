@@ -9,9 +9,7 @@ export default class Try extends React.Component {
         <div>
         <p>
             <header>
-                <div>
-                    hhel     wwwww
-                </div>
+dd
             </header>
         </p>
         </div>
